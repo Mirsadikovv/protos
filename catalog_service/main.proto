@@ -3,6 +3,7 @@ syntax = "proto3";
 option go_package = "genproto/catalog_service";
 
 package catalog_service_go;
+import "google/protobuf/empty.proto";
 
 
 service CategoryService {
@@ -10,7 +11,7 @@ service CategoryService {
     rpc GetByID(CategoryPrimaryKey) returns (GetCategory) {}
     rpc GetList(GetListCategoryRequest) returns (GetListCategoryResponse) {}
     rpc Update(UpdateCategory) returns (GetCategory) {}
-    rpc Delete(CategoryPrimaryKey) returns (Empty) {}
+    rpc Delete(CategoryPrimaryKey) returns (google.protbuf.Empty) {}
 }
 
 message Empty {}
