@@ -22,13 +22,12 @@ message CategoryPrimaryKey {
 
 
 message CreateCategory {
-    string slug = 1; 
-    string name_uz = 2;
-    string name_ru = 3;
-    string name_en = 4;
-    bool active = 5;
-    int32 order_no = 6;
-    string parent_id = 7;
+    string name_uz = 1;
+    string name_ru = 2;
+    string name_en = 3;
+    bool active = 4;
+    int32 order_no = 5;
+    string parent_id = 6;
 }
 
 message GetCategory {
