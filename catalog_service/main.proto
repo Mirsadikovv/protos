@@ -19,8 +19,6 @@ message CategoryPrimaryKey {
     string id = 1;
 }
 
-message Empty {
-}
 message CreateCategory {
     string name_uz = 1;
     string name_ru = 2;
