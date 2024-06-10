@@ -34,20 +34,22 @@ message CreateProduct {
 }
 
 message GetProduct {
-    string name_uz = 1;
-    string name_ru = 2;
-    string name_en = 3;
-    string description_uz = 4;
-    string description_ru = 5;
-    string description_en = 6;
-    bool active = 7;
-    int32 order_no = 8;
-    float in_price = 9;
-    float out_price =10;
-    int32 left_count = 11;
-    float discount_percent = 12; 
-    string created_at = 13;
-    string updated_at = 14;
+    string id = 1;
+    string slug = 2;
+    string name_uz = 3;
+    string name_ru = 4;
+    string name_en = 5;
+    string description_uz = 6;
+    string description_ru = 7;
+    string description_en = 8;
+    bool active = 9;
+    int32 order_no = 10;
+    float in_price = 11;
+    float out_price = 12;
+    int32 left_count = 13;
+    float discount_percent = 14; 
+    string created_at = 15;
+    string updated_at = 16;
 }
 
 message UpdateProduct {
