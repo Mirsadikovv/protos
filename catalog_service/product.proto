@@ -1,0 +1,77 @@
+syntax = "proto3";
+
+option go_package = "genproto/product_service";
+
+package product_service_go;
+import "google/protobuf/empty.proto";
+
+
+service ProductService {
+    rpc Create(Create) returns (Get) {}
+    rpc GetByID(PrimaryKey) returns (Get) {}
+    rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
+    rpc Update(Update) returns (Get) {}
+    rpc Delete(PrimaryKey) returns (google.protobuf.Empty) {}
+}
+
+message PrimaryKey {
+    string id = 1;
+}
+
+message Create {
+    string name_uz = 1;
+    string name_ru = 2;
+    string name_en = 3;
+    string description_uz = 4;
+    string description_ru = 5;
+    string description_en = 6;
+    bool active = 7;
+    int32 order_no = 8;
+    float in_price = 9;
+    float out_price =10;
+    int32 left_count = 11;
+    float discount_percent = 12; 
+}
+
+message Get {
+    string name_uz = 1;
+    string name_ru = 2;
+    string name_en = 3;
+    string description_uz = 4;
+    string description_ru = 5;
+    string description_en = 6;
+    bool active = 7;
+    int32 order_no = 8;
+    float in_price = 9;
+    float out_price =10;
+    int32 left_count = 11;
+    float discount_percent = 12; 
+    string created_at = 13;
+    string updated_at = 14;
+}
+
+message Update {
+    string name_uz = 1;
+    string name_ru = 2;
+    string name_en = 3;
+    string description_uz = 4;
+    string description_ru = 5;
+    string description_en = 6;
+    bool active = 7;
+    int32 order_no = 8;
+    float in_price = 9;
+    float out_price =10;
+    int32 left_count = 11;
+    float discount_percent = 12;
+}
+
+message GetAllRequest {
+    int64 offset = 1;
+    int64 limit = 2;
+    string search = 3;
+}
+
+message GetAllResponse {
+    int64 Count = 1;
+    repeated GetProduct Products = 2;
+}
