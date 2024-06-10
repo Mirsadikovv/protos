@@ -7,18 +7,18 @@ import "google/protobuf/empty.proto";
 
 
 service ProductService {
-    rpc Create(Create) returns (Get) {}
-    rpc GetByID(PrimaryKey) returns (Get) {}
-    rpc GetAll(GetAllRequest) returns (GetAllResponse) {}
-    rpc Update(Update) returns (Get) {}
-    rpc Delete(PrimaryKey) returns (google.protobuf.Empty) {}
+    rpc Create(CreateProduct) returns (GetProduct) {}
+    rpc GetByID(ProductPrimaryKey) returns (GetProduct) {}
+    rpc GetList(GetListProductRequest) returns (GetListProductResponse) {}
+    rpc Update(UpdateProduct) returns (GetProduct) {}
+    rpc Delete(ProductPrimaryKey) returns (google.protobuf.Empty) {}
 }
 
-message PrimaryKey {
+message ProductPrimaryKey {
     string id = 1;
 }
 
-message Create {
+message CreateProduct {
     string name_uz = 1;
     string name_ru = 2;
     string name_en = 3;
@@ -33,7 +33,7 @@ message Create {
     float discount_percent = 12; 
 }
 
-message Get {
+message GetProduct {
     string name_uz = 1;
     string name_ru = 2;
     string name_en = 3;
@@ -50,7 +50,7 @@ message Get {
     string updated_at = 14;
 }
 
-message Update {
+message UpdateProduct {
     string name_uz = 1;
     string name_ru = 2;
     string name_en = 3;
@@ -65,13 +65,13 @@ message Update {
     float discount_percent = 12;
 }
 
-message GetAllRequest {
+message GetListProductRequest {
     int64 offset = 1;
     int64 limit = 2;
     string search = 3;
 }
 
-message GetAllResponse {
+message GetListProductResponse {
     int64 Count = 1;
-    repeated GetProduct Products = 2;
+    repeated GetProduct Categories = 2;
 }
