@@ -75,5 +75,5 @@ message GetListProductRequest {
 
 message GetListProductResponse {
     int64 Count = 1;
-    repeated GetProduct Categories = 2;
+    repeated GetProduct Products = 2;
 }
