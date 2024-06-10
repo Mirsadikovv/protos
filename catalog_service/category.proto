@@ -11,7 +11,7 @@ service CategoryService {
     rpc GetByID(CategoryPrimaryKey) returns (GetCategory) {}
     rpc GetList(GetListCategoryRequest) returns (GetListCategoryResponse) {}
     rpc Update(UpdateCategory) returns (GetCategory) {}
-    rpc Delete(CategoryPrimaryKey) returns (google.protobuf.empty) {}
+    rpc Delete(CategoryPrimaryKey) returns (google.protobuf.Empty) {}
 }
 
 message CategoryPrimaryKey {
