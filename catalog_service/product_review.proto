@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-option go_package = "genproto/catalog_service";
+option go_package = "genproto/review_service";
 
-package catalog_service_go;
+package review_service_go;
 import "google/protobuf/empty.proto";
 
 
