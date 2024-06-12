@@ -32,8 +32,8 @@ message GetReview {
     float rating = 5;
     string order_id = 6;
     string created_at = 7;
-    string updated_at = 8;
 }
+
 
 message UpdateReview {
     string id = 1;
@@ -48,9 +48,10 @@ message GetListReviewRequest {
     int64 offset = 1;
     int64 limit = 2;
     string search = 3;
+    string product_id = 4;
 }
 
 message GetListReviewResponse {
     int64 Count = 1;
-    repeated GetReview Categories = 2;
+    repeated GetReview Reviews = 2;
 }
