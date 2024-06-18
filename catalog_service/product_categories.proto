@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+option go_package = "genproto/product_categories_service";
+
+package product_catrgories_service_go;
+import "google/protobuf/empty.proto";
+
+
+service ProductCategoriesService {
+    rpc Create(CreateProductCategories) returns (GetProductCategories) {}
+    rpc GetByID(ProductCategoriesPrimaryKey) returns (GetProductCategories) {}
+    rpc GetList(GetListProductCategoriesRequest) returns (GetListProductCategoriesResponse) {}
+    rpc Update(UpdateProductCategories) returns (GetProductCategories) {}
+    rpc Delete(ProductCategoriesPrimaryKey) returns (google.protobuf.Empty) {}
+}
+
+message ProductCategoriesPrimaryKey {
+    string id = 1;
+}
+
+message CreateProductCategories {
+    string product_id = 1;
+    string category_id = 2;
+}
+
+message GetProductCategories {
+    string id = 1;
+    string product_id = 2;
+    string category_id = 3;
+}
+
+message UpdateProductCategories {
+    string id = 1;
+    string product_id = 2;
+    string category_id = 3;
+}
+
+message GetListProductCategoriesRequest {
+    int64 offset = 1;
+    int64 limit = 2;
+    string search = 3;
+}
+
+message GetListProductCategoriesResponse {
+    int64 Count = 1;
+    repeated GetProductCategories ProductCategories = 2;
+}
