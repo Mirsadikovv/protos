@@ -38,6 +38,7 @@ message GetCategory {
     string parent_id = 8;
     string created_at = 9;
     string updated_at = 10;
+    repeated GetCategory childCategories = 11;
 }
 
 message UpdateCategory {
