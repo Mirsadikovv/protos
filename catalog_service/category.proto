@@ -60,4 +60,5 @@ message GetListCategoryRequest {
 message GetListCategoryResponse {
     int64 Count = 1;
     repeated GetCategory Categories = 2;
+    
 }
