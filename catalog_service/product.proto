@@ -31,6 +31,7 @@ message CreateProduct {
     float out_price =10;
     int32 left_count = 11;
     float discount_percent = 12; 
+    string category_id = 13;
 }
 
 message GetProduct {
@@ -66,6 +67,7 @@ message UpdateProduct {
     int32 left_count = 11;
     float discount_percent = 12;
     string id = 13;
+    string category_id = 14;
 }
 
 message GetListProductRequest {
