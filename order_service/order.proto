@@ -8,7 +8,7 @@ service OrderService {
 
     rpc Create(CreateOrder) returns (GetOrder);
     rpc GetByID(OrderPrimaryKey) returns (GetOrder) {}
-   // rpc GetALL(GetListCategoryRequest) returns (GetListCategoryResponse) {}   
+    //rpc GetALL(GetListCategoryRequest) returns (GetListCategoryResponse) {}   
     //rpc Update(UpdateOrder) returns (GetOrder);
     //rpc Delete(OrderPrimaryKey) returns (Empty);
 }

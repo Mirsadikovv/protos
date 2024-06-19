@@ -21,14 +21,11 @@ service OrderStatusService {
 
 
 message CreateStatusRequest {   
-    string id =1;
-    string order_id=2;
-    string status=3;
-    string user_id =4;
-    string reason =5;
-    string created_at = 7;
-    string updated_at = 8;
-    int32 deleted_at = 9;
+    string order_id=1;
+    string status=2;
+    string user_id =3;
+    string reason =4;
+
 }
 
 message OrderPrimaryKeyRequest {
