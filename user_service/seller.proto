@@ -11,6 +11,8 @@ service SellerService {
     rpc GetList(GetListSellerRequest) returns (GetListSellerResponse) {}
     rpc Update(UpdateSeller) returns (Seller) {}
     rpc Delete(SellerPrimaryKey) returns (google.protobuf.Empty) {}
+    rpc GetByGmail(SellerGmail) returns (SellerPrimaryKey) {}
+
 }
 
 
@@ -18,6 +20,9 @@ message SellerPrimaryKey {
     string id = 1;
 }
 
+message SellerGmail{
+    string gmail=1;
+}
 message CreateSeller {
     string phone = 1;
     string email = 2;

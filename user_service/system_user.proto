@@ -11,12 +11,18 @@ service UsService {
     rpc GetList(GetListUsRequest) returns (GetListUsResponse) {}
     rpc Update(UpdateUs) returns (Us) {}
     rpc Delete(UsPrimaryKey) returns (google.protobuf.Empty) {}
+    rpc GetByGmail(SystemUserGmail) returns (UsPrimaryKey) {}
+
 }
 
 
 message UsPrimaryKey {
     string id = 1;
 }
+message SystemUserGmail{
+    string gmail=1;
+}
+
 
 message CreateUs {
     string phone = 1;

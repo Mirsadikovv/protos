@@ -12,11 +12,17 @@ service CustomerService {
     rpc GetList(GetListCustomerRequest) returns (GetListCustomerResponse) {}
     rpc Update(UpdateCustomer) returns (Customer) {}
     rpc Delete(CustomerPrimaryKey) returns (google.protobuf.Empty) {}
+    rpc GetByGmail(CustomerGmail) returns (CustomerPrimaryKey) {}
+
 }
 
 
 message CustomerPrimaryKey {
     string id = 1;
+}
+
+message CustomerGmail{
+    string gmail=1;
 }
 
 message CreateCustomer {
